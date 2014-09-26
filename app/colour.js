@@ -73,7 +73,7 @@
       });
     }
     requestAnimationFrame(step(0));
-  }
+  };
 
 })(window.colourMe = window.colourMe || {}, undefined);
 
