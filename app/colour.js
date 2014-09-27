@@ -149,14 +149,12 @@
 
 (function($, undefined) {
   $(document).ready(function() {
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
-    editor.setOptions({maxLines: 50, minLines: 10})
     var canvas = colourMe.createCanvasElement(256, 256, 2, 'colourz', document.getElementById("header"));
     var steps, cellSize, timeStep;
     var go = function() {
-      eval(editor.getValue());
+      function rgb(t, x, y) {
+        return [256*8*t*x*y, 256*8*(t*(1-x)*(1-y)), 0];
+      }
       colourMe.animate(steps === undefined ? 50 : steps, rgb, canvas, cellSize === undefined ? 2: cellSize, timeStep === undefined ? 100 : timeStep);
     };
     go();
