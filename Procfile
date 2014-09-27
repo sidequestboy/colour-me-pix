@@ -1,1 +1,1 @@
-web: node --harmony index.js $PORT
+web: node --harmony index.js
