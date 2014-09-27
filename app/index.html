@@ -8,12 +8,17 @@
 <body>
 	<header id="header"><h1>ColourMePix</h1></header>
 	<button id="editor-submit">Submit</button>
-	<div id="editor">// Expect t, x, y, on normalized intervals [0,1]
+	<div id="editor">var canvas = document.getElementById('colourz');
+
+// Expect t, x, y, on normalized intervals [0,1]
 function rgb(t, x, y) {
   return [256*8*t*x*y, 256*8*(t*(1-x)*(1-y)), 0];
-}</div>
+}
+
+colourMe.animate(50, rgb, canvas, 2, 100);
+</div>
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" src="./app/colour.js"></script>    
+	<script src="./lib/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="./colour.js"></script>    
 </body>
 </html>

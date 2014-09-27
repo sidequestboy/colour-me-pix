@@ -147,17 +147,20 @@
 
 })(window.colourMe = window.colourMe || {}, undefined);
 
+var exec = function(code) {
+  eval(code);
+};
+
 (function($, undefined) {
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/monokai");
+  editor.getSession().setMode("ace/mode/javascript");
+  editor.setOptions({maxLines: 50, minLines: 10})
+  var canvas = colourMe.createCanvasElement(256, 256, 2, 'colourz', document.getElementById("header"));
+
   $(document).ready(function() {
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
-    editor.setOptions({maxLines: 50, minLines: 10})
-    var canvas = colourMe.createCanvasElement(256, 256, 2, 'colourz', document.getElementById("header"));
-    var steps, cellSize, timeStep;
     var go = function() {
-      eval(editor.getValue());
-      colourMe.animate(steps === undefined ? 50 : steps, rgb, canvas, cellSize === undefined ? 2: cellSize, timeStep === undefined ? 100 : timeStep);
+      exec(editor.getValue());
     };
     go();
     $("#editor-submit").on("click", go);
