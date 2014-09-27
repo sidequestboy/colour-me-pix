@@ -1,0 +1,12 @@
+{
+  "name": "colour-me-pix",
+  "version": "1.0.0",
+  "dependencies": {
+    "bluebird": "2.3.4",
+    "koa": "0.12.1",
+    "koa-static": "1.4.7"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
