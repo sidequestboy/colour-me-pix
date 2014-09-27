@@ -1,3 +1,3 @@
 colour-me-pix
 =============
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+[Check it out in action](http://colour-me-pix.herokuapp.com/)
