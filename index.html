@@ -2,10 +2,18 @@
 <html>
 <head>
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-	<title></title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<title>ColourMePix</title>
 </head>
 <body>
+	<header id="header"><h1>ColourMePix</h1></header>
+	<button id="editor-submit">Submit</button>
+	<div id="editor">// Expect t, x, y, on normalized intervals [0,1]
+function rgb(t, x, y) {
+  return [256*8*t*x*y, 256*8*(t*(1-x)*(1-y)), 0];
+}</div>
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="./app/colour.js"></script>
+	<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="./app/colour.js"></script>    
 </body>
 </html>

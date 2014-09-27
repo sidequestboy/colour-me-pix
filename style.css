@@ -1,0 +1,27 @@
+body {
+	background-color: #222;
+	color: #BBB;
+	font-family: Open Sans,sans-serif;
+	margin: 0px auto;
+}
+
+#header {
+	text-align: center;
+}
+
+button {
+	display: block;
+	margin: 0px auto;
+}
+
+canvas {
+	display: block;
+	margin: 1em auto;
+}
+
+#editor { 
+    position: relative;
+    width: 50em;
+    height: 200px;
+    margin: 1em auto;
+}
