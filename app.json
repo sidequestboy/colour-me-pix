@@ -1,0 +1,7 @@
+{
+  "name": "ColourMePix",
+  "description": "A simple canvas which renders pixel js functions based on user input",
+  "repository": "https://github.com/heroku/colour-me-pix",
+  "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["canvas", "node", "ace"]
+}
