@@ -15,7 +15,11 @@ function rgb(t, x, y) {
   return [256*8*t*x*y, 256*8*(t*(1-x)*(1-y)), 0];
 }
 
-colourMe.animate(50, rgb, canvas, 2, 100);
+var nFrames = 50;
+var cellSize = 4; // px
+var refreshPeriod = 100; // ms
+
+colourMe.animate(nFrames, rgb, canvas, cellSize, refreshPeriod);
 </div>
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="./lib/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
