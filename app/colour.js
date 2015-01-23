@@ -42,11 +42,15 @@
     return canvas;
   };
 
+  var mutex = null;
+
   // take function rgb as input, call it to determine pixels on canvas
   colourMe.animate = function(steps, rgb, canvas, cellSize, refreshPeriod) {
     var height = canvas.height / cellSize;
     var width = canvas.width / cellSize;
     var timeStep = 1 / steps;
+    var key = Math.random() + "";
+    mutex = key;
     // Try to take refreshPeriod ms per step, accounting for time it takes to draw
     var animationTime = 0;
     function step(time) {
@@ -65,10 +69,10 @@
           }
         }
         animationTime = new Date() - start;
-        if (time < steps) {
+        if (key == mutex && time < steps) {
           setTimeout(function() {
             requestAnimationFrame(step(time + 1));
-          }, refreshPeriod - animationTime)
+          }, refreshPeriod - animationTime);
         }
       });
     }
